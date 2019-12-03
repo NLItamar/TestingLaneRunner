@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class MovementPlayer : MonoBehaviour
 {
@@ -20,8 +21,8 @@ public class MovementPlayer : MonoBehaviour
         }
 
         //clamping the player
-        var pos = transform.position;
-        pos.x = Mathf.Clamp(transform.position.x, -1.0f, 1.0f);
-        transform.position = pos;
+        Vector3 currentPosition = transform.position;
+        currentPosition.x = Mathf.Clamp(transform.position.x, -1.0f, 1.0f);
+        transform.position = currentPosition;
     }
 }
