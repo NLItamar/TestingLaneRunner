@@ -9,9 +9,9 @@ public class PointsManager : MonoBehaviour
     //invoke spawning lanes every x seconds on x lane
     void Start()
     {
-        InvokeRepeating("SpawnPointsMiddle", 0, 10);
-        InvokeRepeating("SpawnPointsLeft", 2, 10);
-        InvokeRepeating("SpawnPointsRight", 4, 10);
+        InvokeRepeating("SpawnPointsMiddle", 0, 6);
+        InvokeRepeating("SpawnPointsLeft", 2, 8);
+        InvokeRepeating("SpawnPointsRight", 4, 3);
     }
 
     //spawning le points

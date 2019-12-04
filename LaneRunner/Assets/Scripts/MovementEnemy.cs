@@ -8,7 +8,7 @@ public class MovementEnemy : MonoBehaviour
     void Update()
     {
         Vector3 position = this.transform.position;
-        position.z = position.z - 0.1f;
+        position.z = position.z - 0.25f;
         this.transform.position = position;
     }
 }

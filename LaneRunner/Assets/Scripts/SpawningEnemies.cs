@@ -4,15 +4,30 @@ using UnityEngine;
 
 public class SpawningEnemies : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public GameObject SimpleEnemy;
+
+    //invoke spawning lanes every x seconds on x lane
     void Start()
     {
-        
+        InvokeRepeating("SpawnPointsMiddle", 12, 6);
+        InvokeRepeating("SpawnPointsLeft", 15, 8);
+        InvokeRepeating("SpawnPointsRight", 18, 10);
     }
 
-    // Update is called once per frame
-    void Update()
+    //spawning le points
+    void SpawnPointsMiddle()
     {
-        
+        Instantiate(SimpleEnemy, new Vector3(0f, 0.23f, 30f), Quaternion.identity);
+
+    }
+
+    void SpawnPointsLeft()
+    {
+        Instantiate(SimpleEnemy, new Vector3(1f, 0.23f, 30f), Quaternion.identity);
+    }
+
+    void SpawnPointsRight()
+    {
+        Instantiate(SimpleEnemy, new Vector3(-1f, 0.23f, 30f), Quaternion.identity);
     }
 }
