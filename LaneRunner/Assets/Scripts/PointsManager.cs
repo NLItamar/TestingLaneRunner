@@ -10,8 +10,8 @@ public class PointsManager : MonoBehaviour
     void Start()
     {
         InvokeRepeating("SpawnPointsMiddle", 0, 6);
-        InvokeRepeating("SpawnPointsLeft", 2, 8);
-        InvokeRepeating("SpawnPointsRight", 4, 3);
+        InvokeRepeating("SpawnPointsLeft", 2, 6);
+        InvokeRepeating("SpawnPointsRight", 4, 6);
     }
 
     //spawning le points
