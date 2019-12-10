@@ -14,5 +14,9 @@ public class KillZoneManager : MonoBehaviour
         {
             Destroy(otherobject.gameObject);
         }
+        if(otherobject.gameObject.tag == "RotatingBalls")
+        {
+            Destroy(otherobject.gameObject);
+        }
     }
 }

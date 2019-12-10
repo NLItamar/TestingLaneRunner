@@ -7,6 +7,7 @@ TagManager:
   - Points
   - EnemySimple
   - Killzone
+  - RotatingBalls
   layers:
   - Default
   - TransparentFX
