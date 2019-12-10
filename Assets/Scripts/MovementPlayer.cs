@@ -4,6 +4,9 @@ using System.Collections.Generic;
 
 public class MovementPlayer : MonoBehaviour
 {
+    //to-do lerp movement
+    public bool playerIsMoving = false;
+
     void Update()
     {
         //movement
@@ -24,5 +27,10 @@ public class MovementPlayer : MonoBehaviour
         Vector3 currentPosition = transform.position;
         currentPosition.x = Mathf.Clamp(transform.position.x, -1.0f, 1.0f);
         transform.position = currentPosition;
+    }
+
+    void PlayerSmoothMovement()
+    {
+        //to-do lerp movement
     }
 }

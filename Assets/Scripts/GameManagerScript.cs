@@ -23,6 +23,15 @@ public class GameManagerScript : MonoBehaviour
 
     void GameOver()
     {
-        Scene scene = SceneManager.GetActiveScene(); SceneManager.LoadScene(scene.name);
+        if (EditorApplication.isPlaying == true)
+        {
+            EditorApplication.isPlaying = false;
+
+        }
+        else
+        {
+            Application.Quit();
+        }
+        //Scene scene = SceneManager.GetActiveScene(); SceneManager.LoadScene(scene.name);
     }
 }
