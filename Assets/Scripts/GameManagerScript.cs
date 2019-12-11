@@ -23,7 +23,7 @@ public class GameManagerScript : MonoBehaviour
 
     void GameOver()
     {
-        if (EditorApplication.isPlaying == true)
+        /*if (EditorApplication.isPlaying == true)
         {
             EditorApplication.isPlaying = false;
 
@@ -31,7 +31,8 @@ public class GameManagerScript : MonoBehaviour
         else
         {
             Application.Quit();
-        }
+        }*/
+        Application.Quit();
         //Scene scene = SceneManager.GetActiveScene(); SceneManager.LoadScene(scene.name);
     }
 }
