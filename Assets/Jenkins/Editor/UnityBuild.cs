@@ -25,7 +25,7 @@ public class UnityBuild
 	 * 
 	 * Make sure to change these to your own personal paths to the dependencies!
 	 */
-	/////////////private static readonly string AndroidSdkDirectory = "C:/Users/Carl/AppData/Local/Android/Sdk";
+	//private static readonly string AndroidSdkDirectory = "C:/Users/Carl/AppData/Local/Android/Sdk";
 
 	/*
 	 * -- Configuration --
@@ -46,21 +46,21 @@ public class UnityBuild
 	private static readonly Dictionary<BuildTarget, PlatformBuilds> PlatformToBuild = new Dictionary<BuildTarget, PlatformBuilds>()
 	{
 		{ BuildTarget.StandaloneWindows64,      new PlatformBuilds(BuildWindows, true) },
-		//{ BuildTarget.StandaloneLinuxUniversal, new PlatformBuilds(BuildLinux,   true) },
-		//{ BuildTarget.StandaloneOSX,            new PlatformBuilds(BuildMacOS,   true) },
-		//{ BuildTarget.Android,                  new PlatformBuilds(BuildAndroid, true) },
-		//{ BuildTarget.iOS,                      new PlatformBuilds(BuildiOS,     true) },
-		//{ BuildTarget.WebGL,                    new PlatformBuilds(BuildWebGL,   true) },
+		{ BuildTarget.StandaloneLinuxUniversal, new PlatformBuilds(BuildLinux,   false) },
+		{ BuildTarget.StandaloneOSX,            new PlatformBuilds(BuildMacOS,   false) },
+		//{ BuildTarget.Android,                  new PlatformBuilds(BuildAndroid, false) },
+		{ BuildTarget.iOS,                      new PlatformBuilds(BuildiOS,     false) },
+		{ BuildTarget.WebGL,                    new PlatformBuilds(BuildWebGL,   false) },
 	};
 
 	private static readonly Dictionary<BuildTarget, PlatformSpecificBuildOptions> PlatformBuildOptions = new Dictionary<BuildTarget, PlatformSpecificBuildOptions>()
 	{
 		{ BuildTarget.StandaloneWindows64,        new PlatformSpecificBuildOptions(BuildOptions.Development | BuildOptions.CompressWithLz4,                                 BuildOptions.CompressWithLz4HC) },
-		//{ BuildTarget.StandaloneLinuxUniversal,   new PlatformSpecificBuildOptions(BuildOptions.Development | BuildOptions.CompressWithLz4,                                 BuildOptions.CompressWithLz4HC) },
-		//{ BuildTarget.StandaloneOSX,              new PlatformSpecificBuildOptions(BuildOptions.Development | BuildOptions.CompressWithLz4,                                 BuildOptions.CompressWithLz4HC) },
+		{ BuildTarget.StandaloneLinuxUniversal,   new PlatformSpecificBuildOptions(BuildOptions.Development | BuildOptions.CompressWithLz4,                                 BuildOptions.CompressWithLz4HC) },
+		{ BuildTarget.StandaloneOSX,              new PlatformSpecificBuildOptions(BuildOptions.Development | BuildOptions.CompressWithLz4,                                 BuildOptions.CompressWithLz4HC) },
 		//{ BuildTarget.Android,                    new PlatformSpecificBuildOptions(BuildOptions.Development | BuildOptions.CompressWithLz4,                                 BuildOptions.CompressWithLz4HC) },
-		//{ BuildTarget.iOS,                        new PlatformSpecificBuildOptions(BuildOptions.Development | BuildOptions.CompressWithLz4 | BuildOptions.SymlinkLibraries, BuildOptions.CompressWithLz4HC) },
-		//{ BuildTarget.WebGL,                      new PlatformSpecificBuildOptions(BuildOptions.Development | BuildOptions.CompressWithLz4,                                 BuildOptions.CompressWithLz4HC) },
+		{ BuildTarget.iOS,                        new PlatformSpecificBuildOptions(BuildOptions.Development | BuildOptions.CompressWithLz4 | BuildOptions.SymlinkLibraries, BuildOptions.CompressWithLz4HC) },
+		{ BuildTarget.WebGL,                      new PlatformSpecificBuildOptions(BuildOptions.Development | BuildOptions.CompressWithLz4,                                 BuildOptions.CompressWithLz4HC) },
 	};
 
 	private static PlatformBuilds GetPlatformBuildTargets(BuildTarget buildPlatform) 
@@ -94,10 +94,10 @@ public class UnityBuild
 	 * 
 	 * DriveTempDirectory and DriveDirectory should be changed for your own paths!
 	 */
-	private static readonly string DriveTempDirectory = "C:/Users/itama/Documents/";
+	private static readonly string DriveTempDirectory = "C:/Users/itama/Documents";
 	private static readonly string DriveTempFolderName = "JenkinsTemp";
 
-	private static readonly string DriveDirectory = "D:/Google Drive/HvA Game Development/Testing/GameTestingBuilds/";
+	private static readonly string DriveDirectory = "D:/Google Drive/HvA Game Development/Testing/GameTestingBuilds";
 	private static readonly string DriveFolderName = "Jenkins";
 
 	private static string DriveBuildLocation     => Path.Combine(DriveDirectory, DriveFolderName);
@@ -181,17 +181,17 @@ public class UnityBuild
 		BuildPipeline.BuildPlayer(playerOptions);
 	}
 
-	/*private static void BuildLinux()
+	private static void BuildLinux()
 	{
 		BuildPlayerOptions playerOptions = CreatePlayerOptions($"{GameName}", BuildTarget.StandaloneLinuxUniversal);
 		BuildPipeline.BuildPlayer(playerOptions);
-	}*/
+	}
 
-	/*private static void BuildMacOS()
+	private static void BuildMacOS()
 	{
 		BuildPlayerOptions playerOptions = CreatePlayerOptions($"{GameName}", BuildTarget.StandaloneOSX);
 		BuildPipeline.BuildPlayer(playerOptions);
-	}*/
+	}
 
 	/*private static void BuildAndroid()
 	{
@@ -201,15 +201,15 @@ public class UnityBuild
 		BuildPipeline.BuildPlayer(playerOptions);
 	}*/
 
-	/*private static void BuildiOS()
+	private static void BuildiOS()
 	{
 		BuildPlayerOptions playerOptions = CreatePlayerOptions($"{GameName}", BuildTarget.iOS);
 		BuildPipeline.BuildPlayer(playerOptions);
-	}*/
-    
-	/*private static void BuildWebGL()
+	}
+
+	private static void BuildWebGL()
 	{
 		BuildPlayerOptions playerOptions = CreatePlayerOptions($"{GameName}", BuildTarget.WebGL);
 		BuildPipeline.BuildPlayer(playerOptions);
-	}*/
+	}
 }
