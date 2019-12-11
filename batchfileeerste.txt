@@ -5,7 +5,7 @@ echo Attempting to build %JOB_NAME% in Unity Version %UnityVersion%.
 echo Workspace location: '%WORKSPACE%''
 echo Unity Hub location: '%UnityHubLocation%''
 
-"%UnityHubLocation%\Editor\%UnityVersion%\Editor\Unity.exe" -projectPath "%WORKSPACE%" -quit -nographics -batchmode -logFile "%WORKSPACE%\Logs\UnityEditor.log" -executeMethod UnityBuild.BuildPlatforms 
+"%UnityHubLocation%\Editor\%UnityVersion%\Editor\Unity.exe" -projectPath "%WORKSPACE%" -quit -nographics -batchmode -nolog -executeMethod UnityBuild.BuildPlatforms 
 
 echo Build finished, see attached log for information!
 
@@ -13,4 +13,4 @@ echo Build finished, see attached log for information!
 
 2
 
-"C:\Program Files\Unity\Hub\Editor\2019.2.12f1\Editor\Unity.exe" -quit -batchmode -nographics -logFile "%WORKSPACE%\Logs\UnityEditor.log" -buildWindowsPlayer "D:\Google Drive\HvA Game Development\Testing\GameTestingBuilds\myshit\mygame.exe"
+"C:\Program Files\Unity\Hub\Editor\2019.2.12f1\Editor\Unity.exe" -projectPath "D:\Jenkins\workspace\TestingLaneRunner" -quit -nographics -batchmode -nolog -buildWindows64Player "D:\Google Drive\HvA Game Development\Testing\GameTestingBuilds\game.exe"
