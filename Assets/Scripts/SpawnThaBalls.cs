@@ -14,6 +14,6 @@ public class SpawnThaBalls : MonoBehaviour
 
     void SpawnBalls()
     {
-        Instantiate(Balls, new Vector3(0, 0, 60), Quaternion.identity);
+        Instantiate(Balls, new Vector3(0, 0, 90), Quaternion.identity);
     }
 }
