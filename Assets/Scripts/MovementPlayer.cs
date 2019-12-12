@@ -12,25 +12,38 @@ public class MovementPlayer : MonoBehaviour
         //movement
         if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
         {
-            Vector3 position = this.transform.position;
-            position.x--;
-            this.transform.position = position;
+            PlayerMovementLeft();
         }
         if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
         {
-            Vector3 position = this.transform.position;
-            position.x++;
-            this.transform.position = position;
+            PlayerMovementRight();
         }
-
-        //clamping the player
-        Vector3 currentPosition = transform.position;
-        currentPosition.x = Mathf.Clamp(transform.position.x, -1.0f, 1.0f);
-        transform.position = currentPosition;
     }
 
     void PlayerSmoothMovement()
     {
         //to-do lerp movement
+    }
+
+    void PlayerMovementLeft()
+    {
+        Vector3 position = this.transform.position;
+        position.x--;
+        this.transform.position = position;
+    }
+
+    void PlayerMovementRight()
+    {
+        Vector3 position = this.transform.position;
+        position.x++;
+        this.transform.position = position;
+    }
+
+    void ClampPlayer()
+    {
+        //clamping the player
+        Vector3 currentPosition = transform.position;
+        currentPosition.x = Mathf.Clamp(transform.position.x, -1.0f, 1.0f);
+        transform.position = currentPosition;
     }
 }
