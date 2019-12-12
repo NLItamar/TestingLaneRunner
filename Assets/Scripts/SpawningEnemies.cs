@@ -16,20 +16,22 @@ public class SpawningEnemies : MonoBehaviour
     }
 
     //spawning le points
-    void SpawnPointsMiddle()
+    public GameObject SpawnPointsMiddle()
     {
         Instantiate(SimpleEnemy, new Vector3(0f, 0.23f, 30f), Quaternion.identity);
-
+        return SimpleEnemy;
     }
 
-    void SpawnPointsLeft()
+    public GameObject SpawnPointsLeft()
     {
         Instantiate(SimpleEnemy, new Vector3(1f, 0.23f, 30f), Quaternion.identity);
+        return SimpleEnemy;
     }
 
-    void SpawnPointsRight()
+    public GameObject SpawnPointsRight()
     {
         Instantiate(SimpleEnemy, new Vector3(-1f, 0.23f, 30f), Quaternion.identity);
+        return SimpleEnemy;
     }
 
     public void SpawnMoreRandomlyIsh()

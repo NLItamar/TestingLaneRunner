@@ -1,9 +1,10 @@
 {
-    "name": "Tests",
+    "name": "TestsPlayMode",
     "references": [
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",
-        "GameAssembly"
+        "PrefabReferences",
+        "ScriptsReferences"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
