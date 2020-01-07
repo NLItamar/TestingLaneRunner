@@ -71,7 +71,7 @@ namespace Tests
             // In this example, let's assume that our Example.prefab has a script on it called ExampleScript.
             var script = prefab.gameObject.GetComponentInChildren<MovementPlayer>();
             // Assert if the target is moving or not when instantiated
-            Assert.IsTrue(script.playerIsMoving, "Player is moving without input, player cannot move because it thinks it is moving");
+            Assert.IsTrue(script.playerIsMoving == false, "Player is moving without input, player cannot move because it thinks it is moving");
             // Finally, we should clean up our scene by destroying our objects.
             GameObject.Destroy(prefab);
             GameObject.Destroy(root);
