@@ -5,6 +5,8 @@ using System.Collections.Generic;
 public class MovementPlayer : MonoBehaviour
 {
     //to-do lerp movement
+
+    //setting the boollllsss on false so the game can start :D
     public bool playerIsMoving = false;
     public bool playerIsClamped = false;
 
