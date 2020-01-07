@@ -10,14 +10,8 @@ public class MovementPlayer : MonoBehaviour
     void Update()
     {
         //movement
-        if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
-        {
-            PlayerMovementLeft();
-        }
-        if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
-        {
-            PlayerMovementRight();
-        }
+        Movement();
+        ClampPlayer();
     }
 
     void PlayerSmoothMovement()
@@ -25,11 +19,27 @@ public class MovementPlayer : MonoBehaviour
         //to-do lerp movement
     }
 
+
+    void Movement()
+    {
+        if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A) || playerIsMoving == false)
+        {
+            playerIsMoving = true;
+            PlayerMovementLeft();
+        }
+        if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D) || playerIsMoving == false)
+        {
+            playerIsMoving = true;
+            PlayerMovementRight();
+        }
+    }
+
     void PlayerMovementLeft()
     {
         Vector3 position = this.transform.position;
         position.x--;
         this.transform.position = position;
+        playerIsMoving = false;
     }
 
     void PlayerMovementRight()
@@ -37,6 +47,7 @@ public class MovementPlayer : MonoBehaviour
         Vector3 position = this.transform.position;
         position.x++;
         this.transform.position = position;
+        playerIsMoving = false;
     }
 
     void ClampPlayer()
