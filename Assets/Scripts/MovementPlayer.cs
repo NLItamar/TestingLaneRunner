@@ -6,6 +6,7 @@ public class MovementPlayer : MonoBehaviour
 {
     //to-do lerp movement
     public bool playerIsMoving = false;
+    public bool playerIsClamped = false;
 
     void Update()
     {
@@ -22,12 +23,12 @@ public class MovementPlayer : MonoBehaviour
 
     void Movement()
     {
-        if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A) || playerIsMoving == false)
+        if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A) && playerIsMoving == false)
         {
             playerIsMoving = true;
             PlayerMovementLeft();
         }
-        if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D) || playerIsMoving == false)
+        if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D) && playerIsMoving == false)
         {
             playerIsMoving = true;
             PlayerMovementRight();
@@ -56,5 +57,6 @@ public class MovementPlayer : MonoBehaviour
         Vector3 currentPosition = transform.position;
         currentPosition.x = Mathf.Clamp(transform.position.x, -1.0f, 1.0f);
         transform.position = currentPosition;
+        playerIsClamped = true;
     }
 }
