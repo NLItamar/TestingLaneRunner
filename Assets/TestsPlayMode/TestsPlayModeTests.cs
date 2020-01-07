@@ -93,5 +93,11 @@ namespace Tests
             // Use yield to skip a frame.
             yield return null;
         }
+
+        [Test]
+        public void TestTestTest()
+        {
+            Assert.IsTrue(true);
+        }
     }
 }
