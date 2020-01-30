@@ -12,6 +12,8 @@ public class MovementPlayer : MonoBehaviour
 
     void Update()
     {
+        playerIsClamped = false;
+
         //movement
         Movement();
         ClampPlayer();
@@ -56,9 +58,12 @@ public class MovementPlayer : MonoBehaviour
     void ClampPlayer()
     {
         //clamping the player
-        Vector3 currentPosition = transform.position;
-        currentPosition.x = Mathf.Clamp(transform.position.x, -1.0f, 1.0f);
-        transform.position = currentPosition;
-        playerIsClamped = true;
+        if(playerIsClamped == false)
+        {
+            Vector3 currentPosition = transform.position;
+            currentPosition.x = Mathf.Clamp(transform.position.x, -1.0f, 1.0f);
+            transform.position = currentPosition;
+            playerIsClamped = true;
+        }
     }
 }

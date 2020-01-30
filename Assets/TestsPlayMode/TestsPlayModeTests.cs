@@ -116,6 +116,7 @@ namespace Tests
         public void TestsPlayModeTestsSimplePasses()
         {
             // Use the Assert class to test conditions
+            Assert.IsTrue(true);
         }
 
         // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
@@ -125,6 +126,8 @@ namespace Tests
         {
             // Use the Assert class to test conditions.
             // Use yield to skip a frame.
+            Assert.IsTrue(true);
+
             yield return null;
         }
     }
